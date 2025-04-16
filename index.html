@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Đang chuyển hướng...</title>
 
-  <!-- Open Graph Meta Tags -->
+  <!-- Open Graph Meta Tags (cho Facebook, Zalo và các nền tảng chia sẻ khác) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Shopee Link Redirect">
   <meta property="og:description" content="Nhấp vào để mở Shopee">
   <meta property="og:url" content="https://anhcuong110i.github.io/my-redirect-links/">
-  <meta property="og:image" content="https://example.com/your-image.jpg"> <!-- Thay bằng ảnh của bạn nếu muốn -->
+  <!-- Đặt ảnh đại diện cho trang chia sẻ trên mạng xã hội -->
+  <meta property="og:image" content="https://example.com/your-image.jpg"> <!-- Thay ảnh của bạn vào đây -->
 
-  <!-- App Link Meta Tags -->
+  <!-- App Link Meta Tags (cho các ứng dụng như Facebook, Instagram, Zalo...) -->
   <meta property="al:ios:url" content="shopee://www.shopee.vn">
   <meta property="al:ios:app_store_id" content="id123456789"> <!-- Thay thế với ID app Shopee trên App Store -->
   <meta property="al:ios:app_name" content="Shopee">
@@ -20,6 +21,9 @@
   <meta property="al:android:url" content="shopee://www.shopee.vn">
   <meta property="al:android:package" content="com.shopee.tw"> <!-- Thay thế với package ID ứng dụng Shopee trên Android -->
   <meta property="al:android:app_name" content="Shopee">
+
+  <!-- Meta Refresh để tự động chuyển hướng người dùng sau 3 giây -->
+  <meta http-equiv="refresh" content="1;url=https://s.shopee.vn/1qOkNWradF"> <!-- Thay đổi link nếu cần -->
 
   <script>
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
