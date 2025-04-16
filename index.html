@@ -5,77 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Đang chuyển hướng...</title>
 
-  <!-- Open Graph Meta Tags (ẩn link gốc Shopee trên mạng xã hội) -->
-  <meta property="og:type" content=<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Đang chuyển hướng...</title>
-
-  <!-- Open Graph (ẩn link Shopee gốc khi share Facebook/Zalo) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ưu đãi Shopee cực hot!" />
-  <meta property="og:description" content="Nhấn để xem ưu đãi trên Shopee!" />
-  <meta property="og:url" content="https://anhcuong110i.github.io/my-redirect-links/" />
-  <meta property="og:image" content="https://cf.shopee.vn/file/sg-11134201-23010-fpce9j0m8xnv66" />
-
-  <!-- App Link Tags (Facebook & Zalo có thể dùng để mở app) -->
-  <meta property="al:ios:url" content="shopee://open" />
-  <meta property="al:ios:app_store_id" content="959841449" />
-  <meta property="al:ios:app_name" content="Shopee" />
-
-  <meta property="al:android:url" content="shopee://open" />
-  <meta property="al:android:package" content="com.shopee.vn" />
-  <meta property="al:android:app_name" content="Shopee" />
-
-  <!-- Không dùng meta refresh vì sẽ bị Facebook đọc ra link chuyển -->
-  <script>
-    const isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent);
-    const realLink = "https://s.shopee.vn/1qOkNWradF";
-    const fakeLink = "https://s.shopee.vn/9f7NakjAq9";
-
-    // Delay nhẹ để Facebook/Zalo đọc xong metadata
-    setTimeout(() => {
-      window.location.href = isMobile ? realLink : fakeLink;
-    }, 200);
-  </script>
-</head>
-
-<body>
-  <p>Đang chuyển hướng đến Shopee, vui lòng chờ...</p>
-</body>
-</html>
-"website">
-  <meta property="og:title" content="Shopee Link Redirect">
-  <meta property="og:description" content="Nhấp vào để mở Shopee ngay trên app">
-  <meta property="og:url" content="https://anhcuong110i.github.io/my-redirect-links/"> <!-- KHÔNG để link Shopee -->
-  <meta property="og:image" content="https://cf.shopee.vn/file/vn-50009109-30c7bc130a0c63f4de7aefb2cb75e0aa_xxhdpi"> <!-- Ảnh thật từ Shopee -->
+  <!-- Open Graph Tags (cho Facebook, Zalo...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mở ngay khuyến mãi Shopee!">
+  <meta property="og:description" content="Nhấn để nhận ưu đãi đặc biệt trên Shopee.">
+  <meta property="og:url" content="https://anhcuong110i.github.io/my-redirect-links/">
+  <meta property="og:image" content="https://cf.shopee.vn/file/vn-50009109-7b21a261fae69e45b5423ed3c05e1071"> <!-- Ảnh từ link Shopee bạn đã gửi -->
 
   <!-- App Link Meta Tags -->
-  <meta property="al:ios:url" content="shopee://www.shopee.vn">
-  <meta property="al:ios:app_store_id" content="id959841449"> <!-- App Store ID chính xác của Shopee -->
+  <meta property="al:ios:url" content="shopee://open">
+  <meta property="al:ios:app_store_id" content="959841449">
   <meta property="al:ios:app_name" content="Shopee">
 
-  <meta property="al:android:url" content="shopee://www.shopee.vn">
-  <meta property="al:android:package" content="com.shopee.vn"> <!-- Package chuẩn của Shopee Vietnam -->
+  <meta property="al:android:url" content="shopee://open">
+  <meta property="al:android:package" content="com.shopee.vn">
   <meta property="al:android:app_name" content="Shopee">
 
-  <!-- KHÔNG dùng meta refresh để tránh bị Facebook đọc ra link đích -->
-  <!-- Chỉ dùng JS để chuyển hướng -->
-
   <script>
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    document.addEventListener('DOMContentLoaded', function () {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    // Nếu là điện thoại (Android hoặc iPhone), chuyển đến app qua link thật
-    if (/android/i.test(userAgent) || /iPhone|iPad|iPod/i.test(userAgent)) {
-      window.location.href = "https://s.shopee.vn/1qOkNWradF"; // Link Shopee thật
-    } else {
-      // Nếu là máy tính, có thể đưa link giả hoặc trang thông báo
-      window.location.href = "https://s.shopee.vn/9f7NakjAq9"; // Link giả (hoặc để lại link thật tùy bạn)
-    }
+      const shopeeLinkMobile = "https://s.shopee.vn/1qOkNWradF"; // Link app thực sự
+      const fallbackLink = "https://s.shopee.vn/9f7NakjAq9";     // Link giả cho desktop
+
+      const isMobile = /android|iphone|ipad|ipod/i.test(userAgent);
+
+      setTimeout(() => {
+        window.location.href = isMobile ? shopeeLinkMobile : fallbackLink;
+      }, 500); // Đợi nửa giây cho thẻ meta được quét xong trước khi redirect
+    });
   </script>
 </head>
 
 <body>
-  <p>Đang
+  <p>Đang chuyển hướng đến Shopee... Vui lòng chờ giây lát.</p>
+</body>
+</html>
