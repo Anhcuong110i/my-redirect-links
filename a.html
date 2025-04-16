@@ -1,0 +1,28 @@
+<html>
+<head>
+  <script type="text/javascript">
+    // Kiểm tra xem người dùng có phải là người dùng di động (Android hoặc iOS) hay không
+    var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Deeplink Shopee cho Android và iOS
+        var appScheme = "shopee://open_app";  // Deeplink Shopee
+        var appLink = "https://play.google.com/store/apps/details?id=com.shopee.id";  // Link Google Play
+
+        // Cố gắng mở ứng dụng Shopee trực tiếp
+        window.location = appScheme;
+
+        // Nếu không mở được (do chưa cài app), chuyển hướng đến Google Play hoặc App Store
+        setTimeout(function() {
+            window.location = appLink;
+        }, 2000);  // Thời gian chờ để chuyển hướng sang Google Play
+    } else {
+        // Nếu người dùng đang trên máy tính, chuyển hướng đến link Shopee 2
+        window.location = "https://s.shopee.vn/2";  // Link Shopee 2
+    }
+  </script>
+</head>
+<body>
+  <h1>Đang chuyển hướng...</h1>
+</body>
+</html>
